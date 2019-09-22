@@ -1,0 +1,20 @@
+---
+  - name: PYTHON 3 - install Python 3
+    yum:
+      name:
+        - python36
+        - python36-libs
+        - python36-devel
+        - python36-pip
+      state: present
+
+  - name: PYTHON 3 - create symlink /usr/bin/python -> /usr/bin/python3
+    file:
+      src: /usr/bin/python
+      dest: /usr/bin/python3
+      state: link
+
+  - name: PYTHON 3 - install pexpect module
+    pip:
+      name: pexpect
+      state: present
