@@ -8,13 +8,20 @@
         - python36-pip
       state: present
 
-  - name: PYTHON 3 - create symlink /usr/bin/python -> /usr/bin/python3
-    file:
-      src: /usr/bin/python
-      dest: /usr/bin/python3
-      state: link
+#  - name: PYTHON 3 - drop symlink /usr/bin/python -> /usr/bin/python2
+#    file:
+#      path: /usr/bin/python
+#      state: absent
 
-  - name: PYTHON 3 - install pexpect module
-    pip:
-      name: pexpect
-      state: present
+#  - name: PYTHON 3 - create symlink /usr/bin/python -> /usr/bin/python3
+#    file:
+#      src: /usr/bin/python3.6
+#      dest: /usr/bin/python
+#      owner: root
+#      group: root
+#      state: link
+
+#  - name: PYTHON 3 - install pexpect module
+#    pip:
+#      name: pexpect
+#      state: present
